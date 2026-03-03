@@ -56,12 +56,13 @@ AUC-PR phản ánh tốt hiệu suất trên lớp hiếm (fraud).
 
 ## 👥 Thành viên nhóm
 
-  MSSV         Họ tên           Vai trò
-  ------------ ---------------- -------------
-  2351050051   Bùi Nhật Huy     Trưởng nhóm
-  2351050083   Trần Đăng Khoa   Thành viên
-  2351050021   Phạm Hoàng Duy   Thành viên
-  2351050136   Lê Hoàng Phúc    Thành viên
+| MSSV       | Họ tên            | Vai trò       |
+|------------|------------------|--------------|
+| 2351050051 | Bùi Nhật Huy     | Trưởng nhóm  |
+| 2351050083 | Trần Đăng Khoa   | Thành viên   |
+| 2351050021 | Phạm Hoàng Duy   | Thành viên   |
+| 2351050136 | Lê Hoàng Phúc    | Thành viên   |
+
 
 ------------------------------------------------------------------------
 ## Công nghệ- ML: Python, sklearn, Jupyter - Frontend: ReactJS - Backend: Flask / FastAPI / Node (…) - Tracking: wandb 
