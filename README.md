@@ -1,2 +1,4 @@
 # Credit-Card-Fraud-Detection-Classification---Imbalanced-
-Giao dịch thẻ tín dụng bị gian lận gây thiệt hại cho ngân hàng và chủ thẻ. Giao dịch fraud rất hiếm (cỡ 0,1–0,2%); cần phát hiện nhanh, ưu tiên không bỏ sót (Recall) nhưng vẫn kiểm soát báo động sai
+: Xây dựng mô hình phân loại fraud/legitimate từ đặc trưng giao dịch (Amount, Time, features đã
+xử lý/PCA). Xử lý imbalanced mạnh (SMOTE, sampling, class_weight); có thể dùng sample 10–20% data do
+dataset lớn (~284K rows). Focus Recall và AUC-PR
