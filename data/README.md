@@ -8,5 +8,4 @@ Link: https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detecti
 Due to GitHub file size limitations, the raw dataset is not included in this repository.  
 Please download the dataset from Kaggle and place it in the following directory:
 
-data/
-│── creditcard_2023.csv  
+data/── creditcard_2023.csv  
