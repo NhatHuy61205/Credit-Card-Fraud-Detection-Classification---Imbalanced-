@@ -8,6 +8,5 @@ Link: https://www.kaggle.com/datasets/rehanliaqat17/creidct-card/data
 Due to GitHub file size limitations, the raw dataset is not included in this repository.  
 Please download the dataset from Kaggle and place it in the following directory:
 
-<<<<<<< HEAD
 data/── creditcard.csv  
  
