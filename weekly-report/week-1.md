@@ -21,7 +21,7 @@
 | Backend (API) | Chưa làm | 0%| 
 | Demo FE ↔ BE ↔ AI | Chưa làm| 0% | 
 | Báo cáo | Chưa làm | 0% | 
-**Tổng tiến độ: ___%** --- 
+**Tổng tiến độ: 10%** --- 
 ## 3. Kế hoạch tuần tới : Preprocessing
 | Thành viên | Công việc dự kiến | 
 |------------|-------------------| 
