@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np 
 
 def split_data(df, features, target): 
+    """Hàm chia dữ liệu thành tập train, validation và test theo tỷ lệ 80-20, sau đó chia tiếp tập train thành train và validation theo tỷ lệ 80-20."""
     df_sorted = df.sort_values("Time").reset_index(drop=True)
     cut = int(0.8 * len(df_sorted))
     
