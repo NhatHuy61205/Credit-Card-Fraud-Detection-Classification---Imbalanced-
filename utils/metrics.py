@@ -9,6 +9,7 @@ from sklearn.metrics import (
     brier_score_loss)
 
 def evaluate(y_true, y_score, thr=0.5):
+    """Hàm tính các chỉ số đánh giá mô hình dựa trên ngưỡng threshold."""
     y_pred = (y_score >= thr).astype(int)
     tn, fp, fn, tp = confusion_matrix(y_true, y_pred, labels=[0,1]).ravel()
     

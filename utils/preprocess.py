@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 def create_features(df):
-    
+    """Hàm tạo các đặc trưng mới từ dữ liệu gốc."""
     df = df.drop_duplicates().reset_index(drop=True)
     df['_log_amount'] = np.log1p(df['Amount'])
     df['Hour_from_start_mod24'] = ((df['Time'] // 3600) % 24).astype(int)
