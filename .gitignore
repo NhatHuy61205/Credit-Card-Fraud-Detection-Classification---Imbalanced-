@@ -1,1 +1,15 @@
 data/creditcard.csv
+# Node
+node_modules/
+frontend/node_modules/
+dist
+# Python
+__pycache__
+*.pyc
+.venv
+
+# Environment
+.env
+
+# OS
+.DS_Store
