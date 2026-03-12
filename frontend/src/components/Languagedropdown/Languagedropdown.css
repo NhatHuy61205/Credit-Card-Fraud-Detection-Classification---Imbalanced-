@@ -1,0 +1,54 @@
+.lang-container{
+  position: relative;
+  display: inline-block;
+  margin: 30px;
+}
+
+.lang-btn{
+  background: black;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+.lang-btn:hover{
+  background: white;
+  color: black;
+  transition: all 0.5s ease;
+}
+.lang-box{
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: white;
+  width: 100px;
+  height: 0;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  opacity:  0;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  transition: 0.3s;
+}
+
+.lang-box.active{
+  height: auto;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: 0.75s;
+}
+
+.lang-option{
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.lang-option:hover{
+  background: #f2f2f2;
+}
