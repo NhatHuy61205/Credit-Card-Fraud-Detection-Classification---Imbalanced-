@@ -67,7 +67,7 @@ AUC-PR phản ánh tốt hiệu suất trên lớp hiếm (fraud).
 ------------------------------------------------------------------------
 ## Công nghệ- ML: Python, sklearn, Jupyter - Frontend: ReactJS - Backend: Flask / FastAPI / Node (…) - Tracking: wandb 
 ## Cài đặt và chạy 
-### Yêu câ ̀u- Python 3.x, Node.js (nê ́u dùng React) 
+### Yêu câ ̀u- Python 3.x, Node.js (nếu dùng React) 
 ### Chạy Notebook 
 jupyter notebook notebooks/project_analysis.ipynb 
 ### Chạy Backend 

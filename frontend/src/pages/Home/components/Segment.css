@@ -1,0 +1,15 @@
+.rule-bar{
+
+display:flex;
+height:10px;
+width:100%;
+gap: 2px;
+overflow:hidden;
+
+}
+
+.seg{
+
+height:100%;
+
+}
