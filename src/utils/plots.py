@@ -2,6 +2,9 @@ from sklearn.metrics import brier_score_loss, precision_recall_curve
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc, average_precision_score
 from sklearn.calibration import calibration_curve
+from .config import COST_FP as FP, COST_FN as FN
+
+
 def plot_pr_roc(y_true, y_score, title):
     """Hàm vẽ Precision-Recall và ROC với baseline cho PR."""
 
@@ -42,5 +45,29 @@ def reliability_plot(y_true, y_score, title, bins=10):
     plt.legend()
     plt.show()
 
-def plot_alerts_and_savings(alerts, savings, title):
+def plot_alerts_and_savings(df_sweep, title):
+    """Hàm vẽ biểu đồ số lượng cảnh báo và tiết kiệm theo ngưỡng."""
+    #===== Alerts - Threshold (mỗi ngày team fraud phải xử lý bao nhiêu alert?)
+    #threshold càng cao → alerts càng ít
+    plt.figure(figsize=(6,4))
+    plt.plot(df_sweep['threshold'], df_sweep['tp'] + df_sweep['fp'])
+    # Alerts = TP + FP (số giao dịch model cảnh báo fraud)
+    plt.ylabel('Alerts')
+    plt.xlabel('Threshold')
+    plt.title(title+" — Alerts vs Threshold")
+    plt.legend()
+    plt.show()
+    
+    #===== Savings - Threshold (mỗi ngày team fraud tiết kiệm được bao nhiêu tiền?)
+    #Giúp chọn threshold tối ưu về lợi ích kinh tế
+    plt.figure(figsize=(6,4))
+    savings = df_sweep['tp']*FN - df_sweep['fp']*FP
+    # Savings = TP*FN - FP*FP (tiền tiết kiệm được nhờ phát hiện đúng fraud trừ đi tiền mất do cảnh báo sai)
+    plt.plot(df_sweep['threshold'], savings)
+    plt.ylabel('Savings')
+    plt.xlabel('Threshold')
+    plt.title(title+" — Savings vs Threshold")  
+    plt.legend()
+    plt.show()
+
     
