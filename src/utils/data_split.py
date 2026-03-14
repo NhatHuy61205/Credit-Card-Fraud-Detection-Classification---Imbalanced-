@@ -17,9 +17,9 @@ def split_data(df, features, target):
     X_val, y_val = val_df[features], val_df[target].astype(int)
     X_test, y_test = test_df[features], test_df[target].astype(int)
     
-    print("X_train:", X_train.shape, "y_train:", y_train.shape)
-    print("X_val:", X_val.shape, "y_val:", y_val.shape)
-    print("X_test:", X_test.shape, "y_test:", y_test.shape)
+    print("X_train:", X_train, "y_train:", y_train)
+    print("X_val:", X_val, "y_val:", y_val)
+    print("X_test:", X_test, "y_test:", y_test)
     print("Fraud rate in train:", y_train.mean())
     print("Fraud rate in test:", y_test.mean())
     
