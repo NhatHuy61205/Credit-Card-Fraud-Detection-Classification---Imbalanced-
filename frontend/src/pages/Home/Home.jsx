@@ -29,9 +29,10 @@ export default function Home() {
         <h2>Rules performance</h2>
         <span className="line"></span>
         <div className="total-payments">
-          0 Matching payments
-          <div className="time">
-            in the last 24 hours
+          <p>0 Matching payments</p> 
+          <div className="calendar-btn">
+            <i class="fa-regular fa-calendar-days"></i>
+            <p>0/0/0 - 0/0/0</p>
           </div>
         </div>
         <div className="stats-container">

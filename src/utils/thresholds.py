@@ -11,7 +11,7 @@ def thr_for_precision(y_true, y_scores, target_prec=0.9):
     hits = np.where(ps[:-1] >= target_prec)[0]
     idx = hits[0] if hits.size else np.argmax(0.5*ps[:-1] + 0.5*rs[:-1])
 
-    return float(thrs[idx]), float(ps[idx]), float(rs[idx])
+    return dict(threshold=float(thrs[idx]), precision=float(ps[idx]), recall=float(rs[idx]))
 
 
 def thr_min_cost(y_true, y_scores, cost_fp=FP, cost_fn=FN, grid = 1001):
