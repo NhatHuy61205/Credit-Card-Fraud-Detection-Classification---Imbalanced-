@@ -1,0 +1,44 @@
+{
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.3",
+    "heartbeatAt": "2026-03-16T11:52:00.814663",
+    "startedAt": "2026-03-16T11:51:53.727076",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "codePathLocal": null,
+    "git": {
+        "remote": "https://github.com/NhatHuy61205/Credit-Card-Fraud-Detection-Classification---Imbalanced-.git",
+        "commit": "930e985814a2011517650cb0b0330ab867b5b321"
+    },
+    "email": "huyb34385@gmail.com",
+    "root": "C:/Users/huyy/Documents/Credit-Card-Fraud-Detection-Classification---Imbalanced-",
+    "host": "DESKTOP-84RAGCT",
+    "username": "huyy",
+    "executable": "c:\\Users\\huyy\\Documents\\Credit-Card-Fraud-Detection-Classification---Imbalanced-\\.venv\\Scripts\\python.exe",
+    "cpu_count": 10,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 1700.0,
+        "min": 0.0,
+        "max": 1700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1700.0,
+            "min": 0.0,
+            "max": 1700.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 456.82030868530273,
+            "used": 356.4954948425293
+        }
+    },
+    "memory": {
+        "total": 15.692092895507812
+    }
+}

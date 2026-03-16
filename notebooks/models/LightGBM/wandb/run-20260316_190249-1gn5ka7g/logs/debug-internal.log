@@ -1,0 +1,262 @@
+2026-03-16 19:02:49,423 INFO    StreamThr :30844 [internal.py:wandb_internal():86] W&B internal server running at pid: 30844, started at: 2026-03-16 19:02:49.422459
+2026-03-16 19:02:49,425 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: status
+2026-03-16 19:02:49,431 INFO    WriterThread:30844 [datastore.py:open_for_write():87] open: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\run-1gn5ka7g.wandb
+2026-03-16 19:02:49,434 DEBUG   SenderThread:30844 [sender.py:send():379] send: header
+2026-03-16 19:02:49,546 DEBUG   SenderThread:30844 [sender.py:send():379] send: run
+2026-03-16 19:02:52,455 INFO    SenderThread:30844 [dir_watcher.py:__init__():211] watching files in: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files
+2026-03-16 19:02:52,455 INFO    SenderThread:30844 [sender.py:_start_run_threads():1124] run started: 1gn5ka7g with start time 1773662569.424767
+2026-03-16 19:02:52,474 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: check_version
+2026-03-16 19:02:52,474 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: check_version
+2026-03-16 19:02:57,476 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: status_report
+2026-03-16 19:02:57,484 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: run_start
+2026-03-16 19:02:57,503 DEBUG   HandlerThread:30844 [system_info.py:__init__():26] System info init
+2026-03-16 19:02:57,503 DEBUG   HandlerThread:30844 [system_info.py:__init__():41] System info init done
+2026-03-16 19:02:57,503 INFO    HandlerThread:30844 [system_monitor.py:start():194] Starting system monitor
+2026-03-16 19:02:57,504 INFO    SystemMonitor:30844 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2026-03-16 19:02:57,504 INFO    HandlerThread:30844 [system_monitor.py:probe():214] Collecting system info
+2026-03-16 19:02:57,510 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started cpu monitoring
+2026-03-16 19:02:57,510 DEBUG   HandlerThread:30844 [system_info.py:probe():150] Probing system
+2026-03-16 19:02:57,511 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started disk monitoring
+2026-03-16 19:02:57,512 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started memory monitoring
+2026-03-16 19:02:57,528 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started network monitoring
+2026-03-16 19:02:57,529 DEBUG   HandlerThread:30844 [system_info.py:_probe_git():135] Probing git
+2026-03-16 19:02:57,699 DEBUG   HandlerThread:30844 [system_info.py:_probe_git():143] Probing git done
+2026-03-16 19:02:57,699 DEBUG   HandlerThread:30844 [system_info.py:probe():198] Probing system done
+2026-03-16 19:02:57,699 DEBUG   HandlerThread:30844 [system_monitor.py:probe():223] {'os': 'Windows-11-10.0.26200-SP0', 'python': '3.13.3', 'heartbeatAt': '2026-03-16T12:02:57.510888', 'startedAt': '2026-03-16T12:02:49.399744', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '<python with no main file>', 'codePathLocal': None, 'git': {'remote': 'https://github.com/NhatHuy61205/Credit-Card-Fraud-Detection-Classification---Imbalanced-.git', 'commit': '930e985814a2011517650cb0b0330ab867b5b321'}, 'email': 'huyb34385@gmail.com', 'root': 'C:/Users/huyy/Documents/Credit-Card-Fraud-Detection-Classification---Imbalanced-', 'host': 'DESKTOP-84RAGCT', 'username': 'huyy', 'executable': 'c:\\Users\\huyy\\Documents\\Credit-Card-Fraud-Detection-Classification---Imbalanced-\\.venv\\Scripts\\python.exe', 'cpu_count': 10, 'cpu_count_logical': 12, 'cpu_freq': {'current': 1700.0, 'min': 0.0, 'max': 1700.0}, 'cpu_freq_per_core': [{'current': 1700.0, 'min': 0.0, 'max': 1700.0}], 'disk': {'/': {'total': 456.82030868530273, 'used': 356.4934501647949}}, 'memory': {'total': 15.692092895507812}}
+2026-03-16 19:02:57,699 INFO    HandlerThread:30844 [system_monitor.py:probe():224] Finished collecting system info
+2026-03-16 19:02:57,699 INFO    HandlerThread:30844 [system_monitor.py:probe():227] Publishing system info
+2026-03-16 19:02:57,701 INFO    HandlerThread:30844 [system_monitor.py:probe():229] Finished publishing system info
+2026-03-16 19:02:57,705 DEBUG   SenderThread:30844 [sender.py:send():379] send: files
+2026-03-16 19:02:57,705 INFO    SenderThread:30844 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2026-03-16 19:02:57,846 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: python_packages
+2026-03-16 19:02:57,846 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: python_packages
+2026-03-16 19:02:57,846 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: stop_status
+2026-03-16 19:02:57,847 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: stop_status
+2026-03-16 19:02:57,847 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: internal_messages
+2026-03-16 19:02:57,851 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: pause
+2026-03-16 19:02:57,851 INFO    HandlerThread:30844 [handler.py:handle_request_pause():708] stopping system metrics thread
+2026-03-16 19:02:57,851 INFO    HandlerThread:30844 [system_monitor.py:finish():203] Stopping system monitor
+2026-03-16 19:02:57,851 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2026-03-16 19:02:57,852 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2026-03-16 19:02:57,852 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():183] Publishing last batch of metrics
+2026-03-16 19:02:57,852 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined cpu monitor
+2026-03-16 19:02:57,853 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined disk monitor
+2026-03-16 19:02:57,853 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined memory monitor
+2026-03-16 19:02:57,853 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined network monitor
+2026-03-16 19:02:57,861 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: resume
+2026-03-16 19:02:57,861 INFO    HandlerThread:30844 [handler.py:handle_request_resume():699] starting system metrics thread
+2026-03-16 19:02:57,861 INFO    HandlerThread:30844 [system_monitor.py:start():194] Starting system monitor
+2026-03-16 19:02:57,862 INFO    SystemMonitor:30844 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2026-03-16 19:02:57,876 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started cpu monitoring
+2026-03-16 19:02:57,878 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started disk monitoring
+2026-03-16 19:02:57,881 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started memory monitoring
+2026-03-16 19:02:57,894 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started network monitoring
+2026-03-16 19:02:58,490 INFO    Thread-16 :30844 [dir_watcher.py:_on_file_created():271] file/dir created: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\wandb-metadata.json
+2026-03-16 19:02:58,491 INFO    Thread-16 :30844 [dir_watcher.py:_on_file_created():271] file/dir created: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\requirements.txt
+2026-03-16 19:02:59,742 DEBUG   SenderThread:30844 [sender.py:send():379] send: telemetry
+2026-03-16 19:02:59,743 DEBUG   SenderThread:30844 [sender.py:send():379] send: stats
+2026-03-16 19:03:00,503 INFO    Thread-16 :30844 [dir_watcher.py:_on_file_created():271] file/dir created: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\output.log
+2026-03-16 19:03:02,477 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: status_report
+2026-03-16 19:03:02,530 INFO    Thread-16 :30844 [dir_watcher.py:_on_file_modified():288] file/dir modified: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\output.log
+2026-03-16 19:03:03,123 INFO    wandb-upload_0:30844 [upload_job.py:push():131] Uploaded file C:\Users\huyy\AppData\Local\Temp\tmppu4yzo3dwandb\mjw1frdm-wandb-metadata.json
+2026-03-16 19:03:04,411 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: pause
+2026-03-16 19:03:04,412 INFO    HandlerThread:30844 [handler.py:handle_request_pause():708] stopping system metrics thread
+2026-03-16 19:03:04,412 INFO    HandlerThread:30844 [system_monitor.py:finish():203] Stopping system monitor
+2026-03-16 19:03:04,412 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2026-03-16 19:03:04,412 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2026-03-16 19:03:04,413 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined cpu monitor
+2026-03-16 19:03:04,413 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():183] Publishing last batch of metrics
+2026-03-16 19:03:04,413 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined disk monitor
+2026-03-16 19:03:04,413 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined memory monitor
+2026-03-16 19:03:04,414 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined network monitor
+2026-03-16 19:03:04,414 DEBUG   SenderThread:30844 [sender.py:send():379] send: stats
+2026-03-16 19:03:04,422 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: resume
+2026-03-16 19:03:04,422 INFO    HandlerThread:30844 [handler.py:handle_request_resume():699] starting system metrics thread
+2026-03-16 19:03:04,423 INFO    HandlerThread:30844 [system_monitor.py:start():194] Starting system monitor
+2026-03-16 19:03:04,423 INFO    SystemMonitor:30844 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2026-03-16 19:03:04,433 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started cpu monitoring
+2026-03-16 19:03:04,503 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started disk monitoring
+2026-03-16 19:03:04,506 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: pause
+2026-03-16 19:03:04,507 INFO    HandlerThread:30844 [handler.py:handle_request_pause():708] stopping system metrics thread
+2026-03-16 19:03:04,507 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started memory monitoring
+2026-03-16 19:03:04,507 INFO    HandlerThread:30844 [system_monitor.py:finish():203] Stopping system monitor
+2026-03-16 19:03:04,508 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined cpu monitor
+2026-03-16 19:03:04,508 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started network monitoring
+2026-03-16 19:03:04,508 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined disk monitor
+2026-03-16 19:03:04,509 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2026-03-16 19:03:04,509 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined memory monitor
+2026-03-16 19:03:04,509 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2026-03-16 19:03:04,509 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined network monitor
+2026-03-16 19:03:04,509 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():183] Publishing last batch of metrics
+2026-03-16 19:03:04,510 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: resume
+2026-03-16 19:03:04,511 INFO    HandlerThread:30844 [handler.py:handle_request_resume():699] starting system metrics thread
+2026-03-16 19:03:04,511 INFO    HandlerThread:30844 [system_monitor.py:start():194] Starting system monitor
+2026-03-16 19:03:04,512 INFO    SystemMonitor:30844 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2026-03-16 19:03:04,520 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: pause
+2026-03-16 19:03:04,521 INFO    HandlerThread:30844 [handler.py:handle_request_pause():708] stopping system metrics thread
+2026-03-16 19:03:04,521 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started cpu monitoring
+2026-03-16 19:03:04,521 INFO    HandlerThread:30844 [system_monitor.py:finish():203] Stopping system monitor
+2026-03-16 19:03:04,522 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started disk monitoring
+2026-03-16 19:03:04,522 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined cpu monitor
+2026-03-16 19:03:04,522 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2026-03-16 19:03:04,522 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined disk monitor
+2026-03-16 19:03:04,522 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2026-03-16 19:03:04,523 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():183] Publishing last batch of metrics
+2026-03-16 19:03:04,523 DEBUG   SenderThread:30844 [sender.py:send():379] send: stats
+2026-03-16 19:03:04,524 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: resume
+2026-03-16 19:03:04,524 INFO    HandlerThread:30844 [handler.py:handle_request_resume():699] starting system metrics thread
+2026-03-16 19:03:04,524 INFO    HandlerThread:30844 [system_monitor.py:start():194] Starting system monitor
+2026-03-16 19:03:04,524 INFO    SystemMonitor:30844 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2026-03-16 19:03:04,525 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: partial_history
+2026-03-16 19:03:04,533 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started cpu monitoring
+2026-03-16 19:03:04,533 DEBUG   SenderThread:30844 [sender.py:send():379] send: stats
+2026-03-16 19:03:04,535 DEBUG   SenderThread:30844 [sender.py:send():379] send: history
+2026-03-16 19:03:04,536 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started disk monitoring
+2026-03-16 19:03:04,536 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: summary_record
+2026-03-16 19:03:04,538 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started memory monitoring
+2026-03-16 19:03:04,553 INFO    SystemMonitor:30844 [interfaces.py:start():190] Started network monitoring
+2026-03-16 19:03:04,554 INFO    Thread-16 :30844 [dir_watcher.py:_on_file_modified():288] file/dir modified: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\output.log
+2026-03-16 19:03:04,554 INFO    SenderThread:30844 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2026-03-16 19:03:04,554 DEBUG   SenderThread:30844 [sender.py:send():379] send: telemetry
+2026-03-16 19:03:04,554 DEBUG   SenderThread:30844 [sender.py:send():379] send: exit
+2026-03-16 19:03:04,554 INFO    SenderThread:30844 [sender.py:send_exit():586] handling exit code: 0
+2026-03-16 19:03:04,554 INFO    SenderThread:30844 [sender.py:send_exit():588] handling runtime: 7
+2026-03-16 19:03:04,555 INFO    SenderThread:30844 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2026-03-16 19:03:04,555 INFO    SenderThread:30844 [sender.py:send_exit():594] send defer
+2026-03-16 19:03:04,555 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:04,555 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 0
+2026-03-16 19:03:04,555 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:04,555 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 0
+2026-03-16 19:03:04,556 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 1
+2026-03-16 19:03:04,556 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:04,556 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 1
+2026-03-16 19:03:04,556 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:04,556 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 1
+2026-03-16 19:03:04,556 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 2
+2026-03-16 19:03:04,556 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:04,556 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 2
+2026-03-16 19:03:04,556 INFO    HandlerThread:30844 [system_monitor.py:finish():203] Stopping system monitor
+2026-03-16 19:03:04,556 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2026-03-16 19:03:04,556 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined cpu monitor
+2026-03-16 19:03:04,556 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2026-03-16 19:03:04,557 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined disk monitor
+2026-03-16 19:03:04,557 DEBUG   SystemMonitor:30844 [system_monitor.py:_start():183] Publishing last batch of metrics
+2026-03-16 19:03:04,557 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined memory monitor
+2026-03-16 19:03:04,557 INFO    HandlerThread:30844 [interfaces.py:finish():202] Joined network monitor
+2026-03-16 19:03:04,557 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:04,557 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 2
+2026-03-16 19:03:04,557 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 3
+2026-03-16 19:03:04,557 DEBUG   SenderThread:30844 [sender.py:send():379] send: stats
+2026-03-16 19:03:04,557 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:04,557 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 3
+2026-03-16 19:03:04,558 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:04,558 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 3
+2026-03-16 19:03:04,558 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 4
+2026-03-16 19:03:04,558 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:04,558 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 4
+2026-03-16 19:03:04,558 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:04,558 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 4
+2026-03-16 19:03:04,558 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 5
+2026-03-16 19:03:04,558 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:04,558 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 5
+2026-03-16 19:03:04,558 DEBUG   SenderThread:30844 [sender.py:send():379] send: summary
+2026-03-16 19:03:04,559 INFO    SenderThread:30844 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2026-03-16 19:03:04,559 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:04,559 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 5
+2026-03-16 19:03:04,559 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 6
+2026-03-16 19:03:04,559 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:04,559 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 6
+2026-03-16 19:03:04,560 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:04,560 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 6
+2026-03-16 19:03:04,561 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: status_report
+2026-03-16 19:03:05,143 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 7
+2026-03-16 19:03:05,144 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:05,144 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 7
+2026-03-16 19:03:05,145 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:05,145 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 7
+2026-03-16 19:03:05,521 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: poll_exit
+2026-03-16 19:03:05,554 INFO    Thread-16 :30844 [dir_watcher.py:_on_file_modified():288] file/dir modified: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\config.yaml
+2026-03-16 19:03:05,555 INFO    Thread-16 :30844 [dir_watcher.py:_on_file_created():271] file/dir created: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\wandb-summary.json
+2026-03-16 19:03:06,515 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 8
+2026-03-16 19:03:06,515 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: poll_exit
+2026-03-16 19:03:06,515 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:06,515 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 8
+2026-03-16 19:03:06,515 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:06,516 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 8
+2026-03-16 19:03:06,516 INFO    SenderThread:30844 [job_builder.py:build():318] Attempting to build job artifact
+2026-03-16 19:03:06,516 INFO    SenderThread:30844 [job_builder.py:_get_source_type():455] is repo sourced job
+2026-03-16 19:03:06,516 INFO    SenderThread:30844 [job_builder.py:_get_program_relpath():473] run is notebook based run
+2026-03-16 19:03:06,516 WARNING SenderThread:30844 [job_builder.py:_log_if_verbose():210] Source type is set to 'repo' but some required information is missing from the environment. A job will not be created from this run. See https://docs.wandb.ai/guides/launch/create-job
+2026-03-16 19:03:06,516 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 9
+2026-03-16 19:03:06,516 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:06,516 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 9
+2026-03-16 19:03:06,517 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:06,517 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 9
+2026-03-16 19:03:06,517 INFO    SenderThread:30844 [dir_watcher.py:finish():358] shutting down directory watcher
+2026-03-16 19:03:06,526 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: poll_exit
+2026-03-16 19:03:06,568 INFO    SenderThread:30844 [dir_watcher.py:_on_file_modified():288] file/dir modified: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\output.log
+2026-03-16 19:03:06,569 INFO    SenderThread:30844 [dir_watcher.py:finish():388] scan: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files
+2026-03-16 19:03:06,570 INFO    SenderThread:30844 [dir_watcher.py:finish():402] scan save: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\config.yaml config.yaml
+2026-03-16 19:03:06,570 INFO    SenderThread:30844 [dir_watcher.py:finish():402] scan save: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\output.log output.log
+2026-03-16 19:03:06,570 INFO    SenderThread:30844 [dir_watcher.py:finish():402] scan save: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\requirements.txt requirements.txt
+2026-03-16 19:03:06,573 INFO    SenderThread:30844 [dir_watcher.py:finish():402] scan save: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\wandb-metadata.json wandb-metadata.json
+2026-03-16 19:03:06,576 INFO    SenderThread:30844 [dir_watcher.py:finish():402] scan save: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\wandb-summary.json wandb-summary.json
+2026-03-16 19:03:06,577 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 10
+2026-03-16 19:03:06,577 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: poll_exit
+2026-03-16 19:03:06,577 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:06,579 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 10
+2026-03-16 19:03:06,580 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:06,580 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 10
+2026-03-16 19:03:06,580 INFO    SenderThread:30844 [file_pusher.py:finish():172] shutting down file pusher
+2026-03-16 19:03:07,385 INFO    wandb-upload_0:30844 [upload_job.py:push():131] Uploaded file c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\config.yaml
+2026-03-16 19:03:07,530 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: poll_exit
+2026-03-16 19:03:07,531 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: poll_exit
+2026-03-16 19:03:08,535 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: poll_exit
+2026-03-16 19:03:08,536 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: poll_exit
+2026-03-16 19:03:09,338 INFO    wandb-upload_1:30844 [upload_job.py:push():131] Uploaded file c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\output.log
+2026-03-16 19:03:09,542 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: poll_exit
+2026-03-16 19:03:09,542 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: poll_exit
+2026-03-16 19:03:09,958 INFO    wandb-upload_2:30844 [upload_job.py:push():131] Uploaded file c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\requirements.txt
+2026-03-16 19:03:10,542 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: poll_exit
+2026-03-16 19:03:10,543 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: poll_exit
+2026-03-16 19:03:11,186 INFO    wandb-upload_3:30844 [upload_job.py:push():131] Uploaded file c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\files\wandb-summary.json
+2026-03-16 19:03:11,396 INFO    Thread-15 (_thread_body):30844 [sender.py:transition_state():614] send defer: 11
+2026-03-16 19:03:11,397 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:11,397 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 11
+2026-03-16 19:03:11,398 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:11,398 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 11
+2026-03-16 19:03:11,398 INFO    SenderThread:30844 [file_pusher.py:join():178] waiting for file pusher
+2026-03-16 19:03:11,399 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 12
+2026-03-16 19:03:11,400 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:11,400 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 12
+2026-03-16 19:03:11,400 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:11,400 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 12
+2026-03-16 19:03:11,400 INFO    SenderThread:30844 [file_stream.py:finish():614] file stream finish called
+2026-03-16 19:03:11,547 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: poll_exit
+2026-03-16 19:03:11,797 INFO    SenderThread:30844 [file_stream.py:finish():618] file stream finish is done
+2026-03-16 19:03:11,798 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 13
+2026-03-16 19:03:11,798 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: poll_exit
+2026-03-16 19:03:11,798 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:11,798 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 13
+2026-03-16 19:03:11,799 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:11,799 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 13
+2026-03-16 19:03:11,799 INFO    SenderThread:30844 [sender.py:transition_state():614] send defer: 14
+2026-03-16 19:03:11,800 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: defer
+2026-03-16 19:03:11,800 INFO    HandlerThread:30844 [handler.py:handle_request_defer():172] handle defer: 14
+2026-03-16 19:03:11,801 DEBUG   SenderThread:30844 [sender.py:send():379] send: final
+2026-03-16 19:03:11,801 DEBUG   SenderThread:30844 [sender.py:send():379] send: footer
+2026-03-16 19:03:11,801 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: defer
+2026-03-16 19:03:11,801 INFO    SenderThread:30844 [sender.py:send_request_defer():610] handle sender defer: 14
+2026-03-16 19:03:11,802 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: poll_exit
+2026-03-16 19:03:11,803 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: poll_exit
+2026-03-16 19:03:11,804 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: internal_messages
+2026-03-16 19:03:11,805 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: server_info
+2026-03-16 19:03:11,805 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: get_summary
+2026-03-16 19:03:11,806 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: sampled_history
+2026-03-16 19:03:11,806 DEBUG   SenderThread:30844 [sender.py:send_request():406] send_request: server_info
+2026-03-16 19:03:12,209 DEBUG   HandlerThread:30844 [handler.py:handle_request():146] handle_request: shutdown
+2026-03-16 19:03:12,209 INFO    HandlerThread:30844 [handler.py:finish():866] shutting down handler
+2026-03-16 19:03:12,809 INFO    WriterThread:30844 [datastore.py:close():296] close: c:\Users\huyy\Documents\Credit-Card-Fraud-Detection-Classification---Imbalanced-\notebooks\models\LightGBM\wandb\run-20260316_190249-1gn5ka7g\run-1gn5ka7g.wandb
+2026-03-16 19:03:13,219 INFO    SenderThread:30844 [sender.py:finish():1546] shutting down sender
+2026-03-16 19:03:13,219 INFO    SenderThread:30844 [file_pusher.py:finish():172] shutting down file pusher
+2026-03-16 19:03:13,219 INFO    SenderThread:30844 [file_pusher.py:join():178] waiting for file pusher
