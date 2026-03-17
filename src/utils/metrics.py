@@ -8,6 +8,7 @@ from sklearn.metrics import (
     average_precision_score,
     brier_score_loss)
 from .config import COST_FP as FP, COST_FN as FN, SEED
+from .thresholds import thr_min_cost
 
 np.random.seed(SEED)
 
@@ -62,3 +63,15 @@ def bootstrap_ci(y_true, y_score, metric_func, n_bootstraps=300, alpha=0.05):
     lower = np.quantile(boot_metrics,  alpha / 2)
     upper = np.quantile(boot_metrics, 1 - alpha / 2)
     return float(lower), float(upper)
+
+def log_eval(y_true, y_score):
+    rs_eval = evaluate(y_true, y_score)
+
+    rs_best_thr, rs_best_cost = thr_min_cost(y_true, y_score)
+
+    return dict(
+        threshold = rs_best_thr,
+        Cost = rs_best_cost,
+        ROC_AUC = rs_eval["roc_auc"],
+        PR_AUC = rs_eval["auprc"]
+    )
