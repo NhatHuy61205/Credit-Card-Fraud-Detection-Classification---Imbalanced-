@@ -14,3 +14,15 @@ Run URL: https://wandb.ai/2351050051huy-tr-ng-i-h-c-m-th-nh-ph-h-ch-minh/credit-
 Model: RandomForestClassifier
 Date: 2026-03-17
 Run URL: https://wandb.ai/2351050051huy-tr-ng-i-h-c-m-th-nh-ph-h-ch-minh/credit-card-fraud-detection/runs/sddj74dx
+
+Model: LightGBM
+Date: 2026-03-18
+Run URL: https://wandb.ai/2351050051huy-tr-ng-i-h-c-m-th-nh-ph-h-ch-minh/credit-card-fraud-detection/runs/kllek7a8
+
+Model: LightGBM
+Date: 2026-03-18
+Run URL: https://wandb.ai/2351050051huy-tr-ng-i-h-c-m-th-nh-ph-h-ch-minh/credit-card-fraud-detection/runs/y1aenxhk
+
+Model: LightGBM
+Date: 2026-03-18
+Run URL: https://wandb.ai/2351050051huy-tr-ng-i-h-c-m-th-nh-ph-h-ch-minh/credit-card-fraud-detection/runs/boigb3rx
