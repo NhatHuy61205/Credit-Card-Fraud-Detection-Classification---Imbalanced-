@@ -75,3 +75,58 @@ def log_eval(y_true, y_score):
         ROC_AUC = rs_eval["roc_auc"],
         PR_AUC = rs_eval["auprc"]
     )
+    
+
+def adaptive_ece(y_true, y_prob, n_bins=10):
+    """Hàm tính ECE theo cách adaptive, tức là chia dữ liệu 
+    thành các bin sao cho mỗi bin có số lượng mẫu xấp xỉ nhau, thay vì chia theo khoảng cố định."""
+    y_true = np.array(y_true)
+    y_prob = np.array(y_prob)
+
+    sort_idx = np.argsort(y_prob)
+    y_true = y_true[sort_idx]
+    y_prob = y_prob[sort_idx]
+
+    bins = np.array_split(np.arange(len(y_prob)), n_bins)
+
+    ece = 0.0
+    total = len(y_prob)
+
+    for b in bins:
+        if len(b) == 0:
+            continue
+
+        conf = np.mean(y_prob[b])
+        acc = np.mean(y_true[b])
+
+        ece += (len(b) / total) * abs(acc - conf)
+
+    return ece
+
+def debiased_ece(y_true, y_prob, n_bins=10):
+    """Hàm tính ECE đã được điều chỉnh để giảm bias, 
+    bằng cách trừ đi một ước lượng về độ lệch ngẫu nhiên do số lượng mẫu trong mỗi bin."""
+    y_true = np.array(y_true)
+    y_prob = np.array(y_prob)
+
+    bins = np.linspace(0, 1, n_bins + 1)
+    bin_ids = np.digitize(y_prob, bins) - 1
+
+    ece = 0.0
+    total = len(y_prob)
+
+    for i in range(n_bins):
+        idx = bin_ids == i
+        n = np.sum(idx)
+
+        if n == 0:
+            continue
+
+        conf = np.mean(y_prob[idx])
+        acc = np.mean(y_true[idx])
+
+        var = acc * (1 - acc) / n
+
+        ece += (n / total) * (abs(acc - conf) - var)
+
+    return max(ece, 0.0)  
