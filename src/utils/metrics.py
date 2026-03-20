@@ -74,9 +74,9 @@ def log_eval(y_true, y_score):
         threshold = rs_best_thr,
         Cost = rs_best_cost,
         ROC_AUC = rs_eval["roc_auc"],
-        PR_AUC = rs_eval["auprc"]
-        debiased_ece = rs_ece_bias
-        adaptive_ece = rs_ece_adap
+        PR_AUC = rs_eval["auprc"],
+        debiased_ece = rs_ece_bias,
+        adaptive_ece = rs_ece_adap,
         Brier = rs_eval["brier"]
     )
     
