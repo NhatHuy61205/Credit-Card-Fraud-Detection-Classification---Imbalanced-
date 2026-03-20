@@ -66,7 +66,6 @@ def bootstrap_ci(y_true, y_score, metric_func, n_bootstraps=300, alpha=0.05):
 
 def log_eval(y_true, y_score):
     rs_eval = evaluate(y_true, y_score)
-
     rs_best_thr, rs_best_cost = thr_min_cost(y_true, y_score)
 
     return dict(
