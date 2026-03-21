@@ -69,5 +69,3 @@ def plot_alerts_and_savings(df_sweep, title):
     plt.title(title+" — Savings vs Threshold")  
     plt.legend()
     plt.show()
-
-    
