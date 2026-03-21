@@ -37,6 +37,6 @@ def sweep_thresholds(y_true, y_prob, cost=(FP, FN)):
         prec = precision_score(y_true, yhat, zero_division=0)
         rec = recall_score(y_true, yhat, zero_division=0)
         f1 = f1_score(y_true, yhat, zero_division=0)
-        cost = fp*cost[0] + fn*cost[1]
-        rows.append({'threshold': thr, 'precision': prec, 'recall': rec, 'f1': f1,'tp': tp,'tn': tn,'fp': fp,'fn': fn, 'cost': cost})
+        total_cost = fp*cost[0] + fn*cost[1]
+        rows.append({'threshold': thr, 'precision': prec, 'recall': rec, 'f1': f1,'tp': tp,'tn': tn,'fp': fp,'fn': fn, 'cost': total_cost})
     return pd.DataFrame(rows)
