@@ -64,21 +64,38 @@ def bootstrap_ci(y_true, y_score, metric_func, n_bootstraps=300, alpha=0.05):
     upper = np.quantile(boot_metrics, 1 - alpha / 2)
     return float(lower), float(upper)
 
-def log_eval(y_true, y_score):
-    rs_eval = evaluate(y_true, y_score)
-    rs_best_thr, rs_best_cost = thr_min_cost(y_true, y_score)
-    rs_ece_bias = debiased_ece(y_true, y_score)
-    rs_ece_adap = adaptive_ece(y_true, y_score)
-
-    return dict(
-        threshold = rs_best_thr,
-        Cost = rs_best_cost,
-        ROC_AUC = rs_eval["roc_auc"],
-        PR_AUC = rs_eval["auprc"],
-        debiased_ece = rs_ece_bias,
-        adaptive_ece = rs_ece_adap,
-        Brier = rs_eval["brier"]
-    )
+def log_eval(y_true, y_score, thr = None):
+    if thr == None:
+        rs_eval = evaluate(y_true, y_score)
+        rs_best_thr, rs_best_cost = thr_min_cost(y_true, y_score)
+        rs_ece_bias = debiased_ece(y_true, y_score)
+        rs_ece_adap = adaptive_ece(y_true, y_score)
+        return dict(
+            threshold = rs_best_thr,
+            Cost = rs_best_cost,
+            ROC_AUC = rs_eval["roc_auc"],
+            PR_AUC = rs_eval["auprc"],
+            debiased_ece = rs_ece_bias,
+            adaptive_ece = rs_ece_adap,
+            Brier = rs_eval["brier"]
+        )
+    else:
+        rs_eval = evaluate(y_true, y_score, thr)
+        rs_cost = realized_cost(y_true, y_score, thr)
+        rs_ece_bias = debiased_ece(y_true, y_score)
+        rs_ece_adap = adaptive_ece(y_true, y_score)
+        return dict(
+            threshold = thr,
+            Cost = rs_cost,
+            Precision = rs_eval["precision"],
+            Recall = rs_eval["recall"],
+            F1 = rs_eval["f1"],
+            ROC_AUC = rs_eval["roc_auc"],
+            PR_AUC = rs_eval["auprc"],
+            debiased_ece = rs_ece_bias,
+            adaptive_ece = rs_ece_adap,
+            Brier = rs_eval["brier"]
+        )
     
 
 def adaptive_ece(y_true, y_prob, n_bins=10):
