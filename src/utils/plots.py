@@ -1,71 +1,39 @@
-from sklearn.metrics import brier_score_loss, precision_recall_curve
+from sklearn.metrics import brier_score_loss, precision_recall_curve, roc_auc_score
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc, average_precision_score
 from sklearn.calibration import calibration_curve
 from .config import COST_FP as FP, COST_FN as FN
 
 
-def plot_pr_roc(y_true, y_score, title):
-    """Hàm vẽ Precision-Recall và ROC với baseline cho PR."""
-
-    # ===== Precision-Recall Curve =====
-    precision, recall, _ = precision_recall_curve(y_true, y_score)
-    ap = average_precision_score(y_true, y_score)
-    plt.figure(figsize=(6,5))
-    plt.plot(recall, precision, label=f'Model (AP={ap:.2f})')
-    plt.axhline(y_true.mean(), linestyle='--', label=f'Baseline={y_true.mean():.2f}')
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
-    plt.title(f'Precision-Recall Curve - {title}')
-    plt.legend()
-    plt.show()
-
-    # ===== ROC Curve =====
+def plot_pr_roc(y_true, y_score ,title):
+    ps,rs , _ = precision_recall_curve(y_true , y_score)
+    plt.plot(rs, ps)
+    plt.axhline(y_true.mean(), ls="--", alpha=0.5)
+    plt.xlabel("Recall"); plt.ylabel("Precision")
+    plt.title(f"{title} — PR (AP={average_precision_score(y_true,y_score):.3f})")
+    plt.grid(True, ls="--", alpha=0.4); plt.tight_layout(); plt.show()
     fpr, tpr, _ = roc_curve(y_true, y_score)
-    roc_auc = auc(fpr, tpr)
-    plt.figure(figsize=(6,5))
-    plt.plot(fpr, tpr, label=f'Model (AUC={roc_auc:.2f})')
-    plt.plot([0, 1], [0, 1], 'k--', label='Random')
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title(f'ROC Curve - {title}')
-    plt.legend()
-    plt.show()
+    plt.plot(fpr, tpr)
+    plt.xlabel("FPR"); plt.ylabel("TPR")
+    plt.title(f"{title} — ROC (AUC={roc_auc_score(y_true,y_score):.3f})")
+    plt.grid(True, ls="--", alpha=0.4); plt.tight_layout(); plt.show()
     
 
 def reliability_plot(y_true, y_score, title, bins=10):
-    """Hàm vẽ biểu đồ so sánh xác suất giá trị dự đoán với giá trị thực tế."""
-    prob_true, prod_pred = calibration_curve(y_true, y_score, n_bins=bins, strategy='quantile')
-    plt.figure(figsize=(6,5))
-    plt.plot(prod_pred, prob_true, marker='o', label='Model')
-    plt.plot([0, 1], [0, 1], 'k--', alpha=0.5, label='Perfectly Calibrated')
-    plt.xlabel('Predicted Probability')
-    plt.ylabel('Empirical probability')
+    prob_true, prob_pred = calibration_curve(y_true, y_score, n_bins=bins, strategy="quantile")
+    plt.plot(prob_pred, prob_true, marker="o")
+    plt.plot([0,1],[0,1], "--", alpha=0.6)
+    plt.xlabel("Predicted probability"); plt.ylabel("Empirical probability")
     plt.title(title + f" — Brier={brier_score_loss(y_true, y_score):.4f}")
-    plt.legend()
-    plt.show()
+    plt.grid(True, ls="--", alpha=0.4); plt.tight_layout(); plt.show()
 
 def plot_alerts_and_savings(df_sweep, title):
-    """Hàm vẽ biểu đồ số lượng cảnh báo và tiết kiệm theo ngưỡng."""
-    #===== Alerts - Threshold (mỗi ngày team fraud phải xử lý bao nhiêu alert?)
-    #threshold càng cao → alerts càng ít
-    plt.figure(figsize=(6,4))
-    plt.plot(df_sweep['threshold'], df_sweep['tp'] + df_sweep['fp'])
-    # Alerts = TP + FP (số giao dịch model cảnh báo fraud)
-    plt.ylabel('Alerts')
-    plt.xlabel('Threshold')
-    plt.title(title+" — Alerts vs Threshold")
-    plt.legend()
-    plt.show()
-    
-    #===== Savings - Threshold (mỗi ngày team fraud tiết kiệm được bao nhiêu tiền?)
-    #Giúp chọn threshold tối ưu về lợi ích kinh tế
-    plt.figure(figsize=(6,4))
-    savings = df_sweep['tp']*FN - df_sweep['fp']*FP
-    # Savings = TP*FN - FP*FP (tiền tiết kiệm được nhờ phát hiện đúng fraud trừ đi tiền mất do cảnh báo sai)
-    plt.plot(df_sweep['threshold'], savings)
-    plt.ylabel('Savings')
-    plt.xlabel('Threshold')
-    plt.title(title+" — Savings vs Threshold")  
-    plt.legend()
-    plt.show()
+    fig, ax = plt.subplots(1,2, figsize=(12,4))
+    # Alerts = predicted positives = tp+fp
+    ax[0].plot(df_sweep["thr"], df_sweep["tp"]+df_sweep["fp"])
+    ax[0].set_title(title+" — Alerts vs Threshold"); ax[0].set_xlabel("Threshold"); ax[0].set_ylabel("#Alerts")
+    # Savings = (tp * FN_cost) - (fp * FP_cost)
+    savings = df_sweep["tp"]*FN - df_sweep["fp"]*FP
+    ax[1].plot(df_sweep["thr"], savings)
+    ax[1].set_title(title+" — Net Savings vs Threshold"); ax[1].set_xlabel("Threshold"); ax[1].set_ylabel("Net Savings ($)")
+    plt.tight_layout(); plt.show()
