@@ -37,3 +37,41 @@ def plot_alerts_and_savings(df_sweep, title):
     ax[1].plot(df_sweep["thr"], savings)
     ax[1].set_title(title+" — Net Savings vs Threshold"); ax[1].set_xlabel("Threshold"); ax[1].set_ylabel("Net Savings ($)")
     plt.tight_layout(); plt.show()
+    
+def plot_pr_overlay(y_true, preds_dict, title="PR Curves — Overlay"):
+    plt.figure(figsize=(8,6))
+    base = y_true.mean()
+    plt.axhline(base, ls="--", alpha=0.5, label=f"Baseline (prevalence={base:.4f})")
+    
+    for name, y_prob in preds_dict.items():
+        ps, rs, _ = precision_recall_curve(y_true, y_prob)
+        ap = average_precision_score(y_true, y_prob)
+        plt.plot(rs, ps, label=f"{name} (AP={ap:.3f})")
+    
+    plt.xlabel("Recall")
+    plt.ylabel("Precision")
+    plt.title(title)
+    plt.grid(True, ls="--", alpha=0.4)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+    
+def reliability_overlay(y_true, preds_dict, bins=10, strategy="quantile",
+                        title="Reliability (Calibration) — Overlay"):
+    plt.figure(figsize=(7,6))
+    plt.plot([0,1],[0,1], "--", alpha=0.6, label="Perfect calibration")
+
+    for name, y_prob in preds_dict.items():
+        prob_true, prob_pred = calibration_curve(y_true, y_prob,
+                                                n_bins=bins, strategy=strategy)
+        brier = brier_score_loss(y_true, y_prob)
+        plt.plot(prob_pred, prob_true, marker="o", label=f"{name} (Brier={brier:.4f})")
+
+    plt.xlim(0, 1); plt.ylim(0, 1)  
+    plt.xlabel("Predicted probability")
+    plt.ylabel("Empirical probability")
+    plt.title(title + f"  | bins={bins}, strategy={strategy}")
+    plt.grid(True, ls="--", alpha=0.4)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
