@@ -16,7 +16,7 @@ export default function StatCard({ status, value }) {
         >
 
             <h3>{config.title}</h3>
-            <p>{value}</p>
+            <p>{value} <i className="fa-solid fa-dollar-sign"></i></p>
 
         </div>
 
