@@ -26,17 +26,15 @@ def thr_min_cost(y_true, y_scores, cost_fp=FP, cost_fn=FN, grid = 1001):
     return best_thr, best_cost
 
 
-def sweep_thresholds(y_true, y_prob, cost=(FP, FN)):
-    """Hàm quét qua các ngưỡng threshold thử nhiều giá trị threshold khác nhau, 
-    tính các metric tương ứng để xem threshold nào tốt nhất."""
-    thresholds = np.linspace(0, 1, 1001)
+def sweep_thresholds(y_true, y_prob, costs=(FP, FN)):
+    ths = np.linspace(0, 1, 101)
     rows = []
-    for thr in thresholds:
-        yhat = (y_prob >= thr).astype(int)
+    for t in ths:
+        yhat = (y_prob >= t).astype(int)
         tn, fp, fn, tp = confusion_matrix(y_true, yhat, labels=[0,1]).ravel()
         prec = precision_score(y_true, yhat, zero_division=0)
-        rec = recall_score(y_true, yhat, zero_division=0)
-        f1 = f1_score(y_true, yhat, zero_division=0)
-        total_cost = fp*cost[0] + fn*cost[1]
-        rows.append({'threshold': thr, 'precision': prec, 'recall': rec, 'f1': f1,'tp': tp,'tn': tn,'fp': fp,'fn': fn, 'cost': total_cost})
-    return pd.DataFrame(rows)
+        rec  = recall_score(y_true, yhat)
+        f1   = f1_score(y_true, yhat, zero_division=0)
+        cost = fp*costs[0] + fn*costs[1]
+        rows.append([t, prec, rec, f1, tp, fp, fn, tn, cost])
+    return pd.DataFrame(rows, columns=["thr","precision","recall","f1","tp","fp","fn","tn","cost"])

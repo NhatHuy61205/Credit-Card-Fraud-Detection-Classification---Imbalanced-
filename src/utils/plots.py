@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc, average_precision_score
 from sklearn.calibration import calibration_curve
 from .config import COST_FP as FP, COST_FN as FN
-
+from utils.thresholds import sweep_thresholds
 
 def plot_pr_roc(y_true, y_score ,title):
     ps,rs , _ = precision_recall_curve(y_true , y_score)
@@ -26,7 +26,7 @@ def reliability_plot(y_true, y_score, title, bins=10):
     plt.xlabel("Predicted probability"); plt.ylabel("Empirical probability")
     plt.title(title + f" — Brier={brier_score_loss(y_true, y_score):.4f}")
     plt.grid(True, ls="--", alpha=0.4); plt.tight_layout(); plt.show()
-
+    
 def plot_alerts_and_savings(df_sweep, title):
     fig, ax = plt.subplots(1,2, figsize=(12,4))
     # Alerts = predicted positives = tp+fp
@@ -57,21 +57,52 @@ def plot_pr_overlay(y_true, preds_dict, title="PR Curves — Overlay"):
     plt.show()
     
 def reliability_overlay(y_true, preds_dict, bins=10, strategy="quantile",
-                        title="Reliability (Calibration) — Overlay"):
+                        title="Reliability (Calibration) — Overlay", zoom_xlim=None, zoom_ylim=None):
     plt.figure(figsize=(7,6))
     plt.plot([0,1],[0,1], "--", alpha=0.6, label="Perfect calibration")
 
     for name, y_prob in preds_dict.items():
-        prob_true, prob_pred = calibration_curve(y_true, y_prob,
-                                                n_bins=bins, strategy=strategy)
+        prob_true, prob_pred = calibration_curve(
+            y_true, y_prob, n_bins=bins, strategy=strategy
+        )
         brier = brier_score_loss(y_true, y_prob)
         plt.plot(prob_pred, prob_true, marker="o", label=f"{name} (Brier={brier:.4f})")
 
-    plt.xlim(0, 1); plt.ylim(0, 1)  
+    if zoom_xlim is not None:
+        plt.xlim(*zoom_xlim)
+    else:
+        plt.xlim(0, 1)
+
+    if zoom_ylim is not None:
+        plt.ylim(*zoom_ylim)
+    else:
+        plt.ylim(0, 1)
+
     plt.xlabel("Predicted probability")
     plt.ylabel("Empirical probability")
-    plt.title(title + f"  | bins={bins}, strategy={strategy}")
+    plt.title(title + f" | bins={bins}, strategy={strategy}")
     plt.grid(True, ls="--", alpha=0.4)
     plt.legend()
     plt.tight_layout()
     plt.show()
+    
+    
+def plot_cost_and_alerts(y_true, y_prob, cost_fp=5.0, cost_fn=200.0, title="Cost & Alerts vs Threshold"):
+    df_sweep = sweep_thresholds(y_true, y_prob, costs=(cost_fp, cost_fn))
+    fig, ax = plt.subplots(1,2, figsize=(12,4))
+    # Alerts = tp + fp
+    ax[0].plot(df_sweep["thr"], df_sweep["tp"] + df_sweep["fp"])
+    ax[0].set_title("Alerts vs Threshold")
+    ax[0].set_xlabel("Threshold"); ax[0].set_ylabel("#Alerts")
+    ax[0].grid(True, ls="--", alpha=0.3)
+
+    # Cost curve
+    ax[1].plot(df_sweep["thr"], df_sweep["cost"])
+    ax[1].set_title(f"Cost vs Threshold (FP=${cost_fp:.0f}, FN=${cost_fn:.0f})")
+    ax[1].set_xlabel("Threshold"); ax[1].set_ylabel("Cost ($)")
+    ax[1].grid(True, ls="--", alpha=0.3)
+
+    plt.suptitle(title)
+    plt.tight_layout()
+    plt.show()
+    return df_sweep
