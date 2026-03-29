@@ -5,8 +5,8 @@ from app.services.data_service import *
 router = APIRouter()
 
 @router.get("/")
-def read_data(skip: int = 0, limit: int = 1000):
-    return { "data": get_data(skip, limit) }
+def read_data(skip: int = 0, limit: int = 1000, status: str = None):
+    return { "data": get_data(skip, limit, status) }
 
 @router.get("/total")
 def all():

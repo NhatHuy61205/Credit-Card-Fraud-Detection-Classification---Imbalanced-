@@ -6,15 +6,14 @@
 
 .layout{
   display:flex;
-  height:100vh;
+  height: 100vh;
 }
-
-
-/* Main */
 
 .main{
   flex:1;
-  display:flex;
+  display: flex;
   flex-direction:column;
+  width: 84%;
+  margin-left: 16%;
 }
 

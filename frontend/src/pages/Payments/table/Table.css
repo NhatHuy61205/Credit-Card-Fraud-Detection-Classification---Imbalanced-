@@ -1,0 +1,35 @@
+.payments-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: inherit;
+    text-align: left;
+}
+
+.payments-table th {
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.payments-table td {
+    opacity: 0.9;
+    padding: 14px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+
+.payments-table td {
+  opacity: 0.9;
+  padding: 14px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* flex nằm bên trong, không phải td */
+.amount-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 100px;
+}

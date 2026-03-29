@@ -1,4 +1,4 @@
-.fraud-status {
+.fraud-status, .payments-dataframe {
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -40,6 +40,7 @@
     justify-content: center;
     font-weight: 500;
 }
+
 .calendar-btn {
     font-size: 14px;
     display: flex;
@@ -52,3 +53,4 @@
     border-radius: 5px;
     cursor: pointer;
 }
+

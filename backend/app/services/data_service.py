@@ -35,12 +35,17 @@ conditions = [
     (df["fraud_proba"] >= 50) & (df["fraud_proba"] < 90) 
 ]
 
-choices = ["success", "early", "disputed"]
+choices = ["Success", "Warning", "Disputed"]
+color = [ "#2e86de","#ff7f0e","#f5b041"]
 
 df["status"] = np.select(conditions, choices, default="success")
+df["color"] = np.select(conditions, color, default="#2e86de")
 
-def get_data(skip=0, limit=1000):
-    return df.iloc[skip:skip+limit].to_dict(orient="records")
+def get_data(skip=0, limit=1000, status=None):
+    if status is None or status == "":
+        return df.iloc[skip:skip+limit].to_dict(orient="records")
+    data = df[df["status"] == status]
+    return data.iloc[skip:skip+limit].to_dict(orient="records")
 
 def total():
     return len(df)
@@ -55,6 +60,6 @@ def amount_per_status():
     df_grouped = df.groupby("status")["Amount"].sum().reset_index()
     total_amount = df_grouped["Amount"].sum()
     df_grouped["percent"] = df_grouped["Amount"] / total_amount * 100
-    df_grouped["bg"] = ["#f5b041","#ff7f0e", "#2e86de"]
+    df_grouped["bg"] = ["#f5b041", "#2e86de", "#ff7f0e"]
     return df_grouped.to_dict(orient="records")
 

@@ -4,9 +4,10 @@ import "./Payments.css"
 import StatCard from "./statcard/Statcard"
 import Segment from "./segment/Segment"
 import PaymentsBarChart from "./barchart/PaymentsBarChart";
+import Table from "./table/Table";
 
 export default function Payments() {
-
+  const [status, setStatus] = useState("");
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -57,9 +58,9 @@ export default function Payments() {
             <Segment
               key={index}
               bg={item.bg}
-              width={item.percent + "%"} 
-              />
-            ))}
+              width={item.percent + "%"}
+            />
+          ))}
 
         </div>
       </div>
@@ -67,7 +68,16 @@ export default function Payments() {
       <div className="payments-chart">
         <PaymentsBarChart />
       </div>
-
+      <div className="payments-dataframe">
+        <h3>Payments</h3>
+        <select value={status} onChange={(e) => setStatus(e.target.value)}>
+          <option value="">-- Chọn trạng thái --</option>
+          <option value="Success">success</option>
+          <option value="Disputed">disputed</option>
+          <option value="Warning">Warning</option>
+        </select>
+        <Table status = {status} />
+      </div>
     </section>
   );
 }

@@ -18,9 +18,9 @@ const PaymentsBarChart = () => {
           <XAxis dataKey="Hour_from_start_mod24" label={{ value: "Hour", position: "insideBottomRight", offset: -5 }} />
           <YAxis />
           <Tooltip />
-          <Bar dataKey="success" stackId="a" fill="#2e86de" />
-          <Bar dataKey="disputed" stackId="a" fill="#f5b041" />
-          <Bar dataKey="early" stackId="a" fill="#ff7f0e" />
+          <Bar dataKey="Success" stackId="a" fill="#2e86de" />
+          <Bar dataKey="Disputed" stackId="a" fill="#f5b041" />
+          <Bar dataKey="Warning" stackId="a" fill="#ff7f0e" />
         </BarChart>
       </ResponsiveContainer>
     </div>
