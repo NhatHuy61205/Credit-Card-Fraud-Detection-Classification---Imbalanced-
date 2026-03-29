@@ -51,18 +51,15 @@ def expected_calibration_error(y_true, y_prob, n_bins=10):
     return ece
 
 rng = np.random.default_rng(SEED)
-def bootstrap_ci(y_true, y_score, metric_func, n_bootstraps=300, alpha=0.05):
-    """Hàm này dùng bootstrap để tính confidence interval (CI) cho một metric (ví dụ: AUC, F1, ECE…).
-    Nghĩa là: thay vì chỉ có 1 giá trị metric, ta ước lượng khoảng mà giá trị thật có thể nằm trong đó.
-    Nếu metric của mô hình nằm ngoài khoảng này, ta có thể nói rằng mô hình có sự khác biệt đáng kể so với baseline."""
+def bootstrap_ci(metric_fn, y_true, y_score, B=300, alpha=0.05):
     n = len(y_true)
-    boot_metrics = []
-    for _ in range(n_bootstraps): 
+    vals = []
+    for _ in range(B):
         idx = rng.integers(0, n, size=n)
-        boot_metrics.append(metric_func(y_true[idx], y_score[idx]))
-    lower = np.quantile(boot_metrics,  alpha / 2)
-    upper = np.quantile(boot_metrics, 1 - alpha / 2)
-    return float(lower), float(upper)
+        vals.append(metric_fn(y_true[idx], y_score[idx]))
+    lo = np.quantile(vals, alpha/2)
+    hi = np.quantile(vals, 1 - alpha/2)
+    return float(lo), float(hi)
 
 def log_eval(y_true, y_score, thr = None):
     if thr == None:
@@ -151,3 +148,18 @@ def debiased_ece(y_true, y_prob, n_bins=10):
         ece += (n / total) * (abs(acc - conf) - var)
 
     return max(ece, 0.0)  
+
+def summarise_model(name, y_true, y_prob, thr_p90, thr_cost):
+    ap = average_precision_score(y_true, y_prob)
+    roc = roc_auc_score(y_true, y_prob)
+    brier = brier_score_loss(y_true, y_prob)
+    ece = expected_calibration_error(y_true.values, y_prob, n_bins=15)
+    cost_p90 = realized_cost(y_true, y_prob, thr_p90, FP, FN)
+    cost_min = realized_cost(y_true, y_prob, thr_cost, FP, FN)
+    ap_lo, ap_hi = bootstrap_ci(average_precision_score, y_true.values, y_prob)
+    return {
+        "Model": name, "AP(Test)": ap, "AP 95% CI": f"[{ap_lo:.3f}, {ap_hi:.3f}]",
+        "ROC-AUC(Test)": roc, "Brier(Test)": brier, "ECE(15)": ece,
+        "Thr@P90(val)": float(thr_p90), "Thr@MinCost(val)": float(thr_cost),
+        "Cost@Test@P90": cost_p90, "Cost@Test@MinCost": cost_min,
+    }
