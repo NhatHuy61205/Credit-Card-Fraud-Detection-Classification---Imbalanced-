@@ -11,7 +11,7 @@ export default function Payments() {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/data/total")
+    fetch("http://127.0.0.1:8000/total")
       .then(res => res.json())
       .then(data => setTotal(data))
       .catch(err => console.error(err));
@@ -20,7 +20,7 @@ export default function Payments() {
   const [stat, setStat] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/data/amount-per-status")
+    fetch("http://127.0.0.1:8000/amount-per-status")
       .then(res => res.json())
       .then(data => setStat(data))
       .catch(err => console.error(err));
@@ -72,9 +72,9 @@ export default function Payments() {
         <h3>Payments</h3>
         <select value={status} onChange={(e) => setStatus(e.target.value)}>
           <option value="">-- Chọn trạng thái --</option>
-          <option value="Success">success</option>
-          <option value="Disputed">disputed</option>
-          <option value="Warning">Warning</option>
+          <option value="success">success</option>
+          <option value="disputed">disputed</option>
+          <option value="warning">Warning</option>
         </select>
         <Table status = {status} />
       </div>

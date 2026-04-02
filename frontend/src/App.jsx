@@ -4,7 +4,6 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Topbar from "./components/Topbar/Topbar";
 
 import Dashboard from "./pages/Dashboard/Dashboard"
-import Transactions from "./pages/Transaction/Transactions"
 import Payments from "./pages/Payments/Payments";
 function App() {
 
@@ -22,7 +21,6 @@ function App() {
           <Routes>
 
             <Route path="/" element={<Dashboard />} />
-            <Route path="/transactions" element={<Transactions />} />
             <Route path="/payments" element={<Payments />} />
 
           </Routes>

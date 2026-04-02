@@ -5,7 +5,7 @@ const PaymentsBarChart = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/data/amount-per-hour")
+    fetch("http://127.0.0.1:8000/amount-per-hour")
       .then(res => res.json())
       .then(data => setData(data))
       .catch(err => console.error(err));
@@ -18,9 +18,9 @@ const PaymentsBarChart = () => {
           <XAxis dataKey="Hour_from_start_mod24" label={{ value: "Hour", position: "insideBottomRight", offset: -5 }} />
           <YAxis />
           <Tooltip />
-          <Bar dataKey="Success" stackId="a" fill="#2e86de" />
-          <Bar dataKey="Disputed" stackId="a" fill="#f5b041" />
-          <Bar dataKey="Warning" stackId="a" fill="#ff7f0e" />
+          <Bar dataKey="success" stackId="a" fill="#2e86de" />
+          <Bar dataKey="disputed" stackId="a" fill="#f5b041" />
+          <Bar dataKey="warning" stackId="a" fill="#ff7f0e" />
         </BarChart>
       </ResponsiveContainer>
     </div>

@@ -1,23 +1,15 @@
 import pandas as pd
 from sqlalchemy import create_engine
+import numpy as np
 
-# 1. Kết nối MySQL
 engine = create_engine("mysql+pymysql://root:root@localhost/mldb")
 
-# 2. Đọc file CSV
-df = pd.read_csv("creditcard.csv")
+df = pd.read_csv("part_2.csv")
 
-df = df.sort_values("Time").reset_index(drop=True)
+# chia 5 phần
+parts = np.array_split(df, 5)
 
-# 4. Lấy 20% cuối
-df_last_20 = df.iloc[int(0.8 * len(df)) :]
-
-# 5. Đẩy vào MySQL
-df_last_20.to_sql(
-    name="transactions",
-    con=engine,
-    if_exists="replace",
-    index=False
-)
-
-print("✅ Đã import 20% dữ liệu cuối")
+# lưu file tự động
+for i, part in enumerate(parts):
+    part = pd.DataFrame(part, columns=df.columns)
+    part.to_csv(f"test_{i+1}.csv", index=False)
