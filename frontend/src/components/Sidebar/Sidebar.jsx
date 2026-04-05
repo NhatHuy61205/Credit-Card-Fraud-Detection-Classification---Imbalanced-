@@ -13,9 +13,6 @@ export default function Sidebar() {
         <NavLink to="/" className="menu-item">
           <i class="fa-solid fa-chart-line"></i> {t("dashboard")} <i class="fa-solid fa-angle-right arrow"></i>
         </NavLink>
-        <NavLink to="/transactions" className="menu-item">
-          <i class="fa-regular fa-credit-card"></i> {t("transactions")} <i class="fa-solid fa-angle-right arrow"></i>
-        </NavLink>
         <NavLink to="/payments" className="menu-item">
           <i class="fa-solid fa-dollar-sign"></i> {t("payments")} <i class="fa-solid fa-angle-right arrow"></i>
         </NavLink>
