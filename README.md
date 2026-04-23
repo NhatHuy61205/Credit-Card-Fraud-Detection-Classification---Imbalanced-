@@ -65,18 +65,69 @@ AUC-PR phản ánh tốt hiệu suất trên lớp hiếm (fraud).
 
 
 ------------------------------------------------------------------------
-## Công nghệ- ML: Python, sklearn, Jupyter - Frontend: ReactJS - Backend: Flask / FastAPI / Node (…) - Tracking: wandb 
-## Cài đặt và chạy 
-### Yêu câ ̀u- Python 3.x, Node.js (nếu dùng React) 
-### Chạy Notebook 
-jupyter notebook notebooks/project_analysis.ipynb 
-### Chạy Backend 
-cd api && pip install -r requirements.txt && python app.py 
-### Chạy Frontend 
-cd frontend && npm install && npm start 
-### Truy cập- Frontend: http://localhost:3000 - API: http://localhost:5000 (hoặc port tương ứng) 
-## Demo- wandb: [link] - Screenshot/video: [link hoặc mô tả] 
-## Nộp bài- Báo cáo: report/report.pdf - wandb link: wandb_link.txt
+# 📌 Fraud Detection System (Fullstack)
+
+## 📖 Mô tả project
+
+Đây là hệ thống **phát hiện gian lận giao dịch (Fraud Detection)** sử dụng Machine Learning, kết hợp giữa:
+
+- **Backend (FastAPI)**: xử lý API, load model ML, nhận file CSV và dự đoán  
+- **Frontend (Vite + JS)**: giao diện người dùng upload dữ liệu và hiển thị kết quả  
+- **Notebook (EDA + Training)**: phân tích dữ liệu và huấn luyện model  
+
+### Hệ thống cho phép:
+
+- Upload file giao dịch (`.csv`)
+- Phân tích và dự đoán gian lận
+- Hiển thị các thống kê như:
+  - Tổng giao dịch
+  - Fraud / Non-fraud
+  - Theo giờ, theo trạng thái
+
+---
+
+## ⚙️ Cấu trúc project
+Credit-Card-Fraud-Detection-Classification
+│
+├── backend/
+│ ├── app.py
+│ ├── services/
+│ ├── schema/
+│ ├── model/
+│ └── db/
+│
+├── frontend/
+│ └── (Vite project)
+│
+├── data/
+│ ├── test_1.csv
+│ ├── test_2.csv
+│ └── ...
+│
+├── notebooks/
+│ ├── eda/
+│ └── models/
+│
+└── artifacts/
+└── model đã train
+│
+└── report/
+└── báo cáo đề tài
+│
+└── screenshots/
+└── nội dung hướng dẫn và hình ảnh demo web
+│
+└── weekly-report/
+└── báo cáo mỗi tuần
+
+
+---
+
+## 🚀 Hướng dẫn chạy project
+### Mở file sceenshots có hướng dẫn chi tiết cách chạy và video hướng dẫn cụ thể
+
+
+
 
 
 
