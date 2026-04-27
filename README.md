@@ -87,6 +87,7 @@ AUC-PR phản ánh tốt hiệu suất trên lớp hiếm (fraud).
 ---
 
 ## ⚙️ Cấu trúc project
+```bash
 Credit-Card-Fraud-Detection-Classification
 │
 ├── backend/
